@@ -1,0 +1,99 @@
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		
+		<title>adminpage</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	 
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		
+			
+		<link rel="stylesheet" type="text/css" href="css/title.css">
+		<link rel="stylesheet" type="text/css" href="css/userAdminPage.css">
+		<link rel="stylesheet" type="text/css" href="css/home.css">
+		<link rel="stylesheet" type="text/css" href="css/header.css">
+		<link rel="stylesheet" type="text/css" href="css/navigation.css">
+		<link rel="stylesheet" type="text/css" href="css/inputs.css">
+		<link rel="stylesheet" type="text/css" href="css/form.css">
+
+</head>
+<body>
+	<div class="header">
+		<h2>Hello-Books Application</h2>
+	  </div>
+  <div id="myHeader">
+  <ul>
+      <li style="float:left;color:aliceblue;font-size:23px;">Hello-Books</li>
+    
+    <li><a href="#contact">view all books</a></li>
+    <li><a href="#contact">login</a></li>
+    <li><a href="#about">register</a></li>
+    <li><a class="active" href="#home">Home</a></li>
+  </ul></div>
+	</head>
+	<body>
+		<div class="container">
+			
+			<div class="userContainer">
+				<div class="title">Admin Page</div>
+
+				<div class="userWelcome">Welcome :admin</div>
+
+				<div class="logout"><a href="adminPage.php?activity=logout">Logout</a></div>
+
+				<div class="userAction">
+					<ul>
+						<li><a class="active" href="adminPage.html">editbook details</a></li>
+						<li><a href="addBooks.html">Add new Books</a></li>
+						<li><a href="adminPage.html">remove a book</a></li>
+						<li><a  href="adminPage.html">view your profile</a></li>
+						<li><a href="viewallbooks.html">View all Books</a></li>
+						<li><a href="adminPage.html">view all Issued Books</a></li>
+						<li><a href="adminPage.html">View all the Users</a></li>
+			
+						<li><a href="adminPage.html">View Books Request</a></li>
+						
+					</ul>
+				</div>
+
+				<div class="userContent">
+			
+	                            			<h2>edit Book details</h2>
+	                            			<div class="bookUpdateForm">
+	                            				<form action="adminPage.html">
+																					<h2>edit Book details</h2>
+                <input type="text" name="book serial number" required autofocus placeholder="Book serail number"><br>
+                <input type="text" name="title" required autofocus placeholder="Book title" ><br>
+                <input type="text" name="bookName" required autofocus placeholder="Book-Name"><br>
+                <input type="text" name="pages" required autofocus placeholder="number of pages"><br>
+				<input type="text" name="authorName" required autofocus placeholder="Author-Name" pattern="[A-Z a-z]{3,}{.}" title="Author name must contain atleast 3 letters."><br>
+				<input type="text" name="number of pages" required autofocus placeholder="number of pages" pattern="[0-9]{3,}{.}"><br>
+				<input type="text" name="bookPublisher" required autofocus placeholder="Publisher" title="Publisher name must contain 3 letters."><br>
+
+	                            					<input type="submit" name="updateBookBtn" value="Update">
+	                            				</form>
+	                            			</div>
+	                            			
+
+				</div>
+			</div>
+		</div>
+		<script>
+			window.onscroll = function() {myFunction()};
+			
+			var header = document.getElementById("myHeader");
+			var sticky = header.offsetTop;
+			
+			function myFunction() {
+			  if (window.pageYOffset >= sticky) {
+				header.classList.add("sticky");
+			  } else {
+				header.classList.remove("sticky");
+			  }
+			}
+			</script>
+	</body>
+</html>

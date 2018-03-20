@@ -1,0 +1,70 @@
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+			<title>borrow a book</title>
+			<link rel="stylesheet" type="text/css" href="css/title.css">
+			<link rel="stylesheet" type="text/css" href="css/table.css">
+			<link rel="stylesheet" type="text/css" href="css/header.css">
+			<link rel="stylesheet" type="text/css" href="css/navigation.css">
+			<link rel="stylesheet" type="text/css" href="css/inputs.css">
+			<link rel="stylesheet" type="text/css" href="css/form.css">
+	  
+		<div class="header">
+			<h2>Hello-Books Application</h2>
+		  </div>
+	  <div id="myHeader">
+	  <ul>
+		  <li style="float:left;color:aliceblue;font-size:23px;">Hello-Books</li>
+		
+		<li><a href="#contact">view all books</a></li>
+		<li><a href="#contact">login</a></li>
+		<li><a href="#about">register</a></li>
+		<li><a class="active" href="#home">Home</a></li>
+	  </ul></div>
+	  <script>
+		window.onscroll = function() {myFunction()};
+		
+		var header = document.getElementById("myHeader");
+		var sticky = header.offsetTop;
+		
+		function myFunction() {
+		  if (window.pageYOffset >= sticky) {
+			header.classList.add("sticky");
+		  } else {
+			header.classList.remove("sticky");
+		  }
+		}
+		</script>
+	
+	</head>
+
+	<body>
+	
+		<div class="requestContainer">
+			<form class="requestForm">
+					
+				<div class="formInput">
+
+					<h2>Request for a book through this form</h2>
+					<input type="text" name="requestId" placeholder="Book ID">
+				</div>
+				<div class="formInput">
+					<input type="text" name="rbookName" required autofocus placeholder="Book-Name" >
+				</div>
+				<div class="formInput">
+					<input type="text" name="rauthorName" required autofocus placeholder="Author-Name">
+				</div>
+				<div class="formInput">
+					<textarea cols="35" rows="3" name="rdescription" placeholder="Description"></textarea>
+				</div>
+					<input type="submit" name="bookRequestBtn" value="Request" class="btnLogin">
+					<br >
+				
+			</form>
+
+			
+	    </div>
+	</body>
+</html>

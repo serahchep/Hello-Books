@@ -1,0 +1,22 @@
+
+.title{
+	position: center;
+	border: none;
+	padding: 20px 600px;
+	text-align: left;
+	font-size: 18px;
+	color: black;
+	background-color: lavender;
+	
+}
+
+.errorMsg{
+	border: none;
+	float: center;
+	text-align: center;
+	padding: 5px 14px;
+	margin-top: 20px;
+	font-size: 18px;
+	background: #ff9999;
+	color: red;
+}

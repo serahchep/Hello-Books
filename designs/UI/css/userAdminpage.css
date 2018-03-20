@@ -1,0 +1,99 @@
+/*this is css for the admin and user page*/
+.userContainer{
+	border: 1px solid blue;
+	border-bottom: none;
+	width: 0 auto;
+	height: 800px;
+	padding: 0px;
+	margin: 5px;
+}
+
+.userWelcome{
+  border: 1px solid gray;
+	width: 220px;
+	text-align: center;
+	font-size: 20px;
+	color: black;
+	background: lavender;
+	float: left;
+	margin-top: 10px;
+	margin-left: 2px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-radius: 5px;
+}
+
+.logout{
+	border: 1px solid gray;
+	width: 220px;
+	text-align: center;
+	font-size: 20px;
+	color: black;
+	background: lavender;
+	float: right;
+	margin-top: 10px;
+	margin-left: 2px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-radius: 5px;
+}
+
+.logout a{
+	color: black;
+}
+
+.userAction{
+  border: none;
+	width: 220px;
+	text-align: left;
+	float: left;
+	margin-top: 74px;
+	margin-left: -225px;
+}
+
+.userContent{
+	border: 1px solid black;
+	width: 600px;
+	height: 0 auto;
+	float: left;
+	margin-top: 35px;
+	margin-left: 220px;
+	padding-bottom: 0px ;
+}
+
+.userAction a{
+	text-decoration: none;
+	color: black;
+	padding: 0px;
+	padding-right: 50px;
+}
+
+.userAction ul{
+	border: none;
+	width: auto;
+	padding-left: 0px;
+	margin-left: 12px;
+
+}
+
+.userAction ul li{
+	list-style-type: none;
+	display: block;
+	background:lavender;
+	padding: 15px;
+	font-size: 18px;
+	padding-left: 30px;
+	text-align: center;
+	border-bottom: 1px solid green;
+}
+
+.userAction ul li:hover{
+	background: green;
+	transition: linear all 0.40s;
+	margin-left: 5px;
+}
+
+.userAction ul li a:hover{
+	color:white;
+}
+

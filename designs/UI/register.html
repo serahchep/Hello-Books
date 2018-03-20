@@ -1,0 +1,90 @@
+
+
+<!DOCTYPE html>
+	<html>
+	<head>
+		<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <title>Hello-Books</title>
+		            <link rel="stylesheet" type="text/css" href="css/title.css">
+		             <link rel="stylesheet" type="text/css" href="css/form.css">
+                 <link rel="stylesheet" type="text/css" href="css/register.css">
+                 <link rel="stylesheet" type="text/css" href="css/header.css">
+		            <link rel="stylesheet" type="text/css" href="css/navigation.css">
+		            <link rel="stylesheet" type="text/css" href="css/form.css">
+                 <link rel="stylesheet" type="text/css" href="css/inputs.css">
+                <title>Hello-Books</title>
+  
+  
+	<div class="header">
+		<h2>Hello-Books Application</h2>
+	  </div>
+  <div id="myHeader">
+  <ul>
+      <li style="float:left;color:aliceblue;font-size:23px;">Hello-Books</li>
+    
+    <li><a href="#contact">view all books</a></li>
+    <li><a href="#contact">login</a></li>
+    <li><a href="#about">register</a></li>
+    <li><a class="active" href="#home">Home</a></li>
+  </ul></div>
+  <script>
+    window.onscroll = function() {myFunction()};
+    
+    var header = document.getElementById("myHeader");
+    var sticky = header.offsetTop;
+    
+    function myFunction() {
+      if (window.pageYOffset >= sticky) {
+        header.classList.add("sticky");
+      } else {
+        header.classList.remove("sticky");
+      }
+    }
+    </script>
+	</head>
+	<body>
+		<div class="requestContainer">
+            <form class="requestForm">
+              <h2>register</h2>
+	
+				
+					<input type="text" name="memberId" required autofocus placeholder="ID" >
+				
+
+				
+					<input type="text" name="firstName" required autofocus placeholder="First-Name" >
+				
+
+				
+					<input type="text" name="lastName" required autofocus placeholder="Last-Name" >
+			
+
+				
+					<input type="text" name="username" required autofocus placeholder="Username" >
+				
+
+				
+					<input type="password" name="pwd" required autofocus placeholder="Password">
+				
+				
+				
+				
+					<input type="text" name="mobile" required autofocus placeholder="Mobile" pattern="[0-9]{10}">
+				
+
+				
+					<input type="email" name="email" required autofocus placeholder="Email" title="example.example1@gmail.com"><br>
+				
+
+				
+					<label>Upload Photo : </label><input type="file" name="fnm" value="Upload Photo"><br>
+				
+
+				<input type="submit" name="addMemberBtn" value="Add Member">
+			</form>
+		</div>
+	</body>
+</html>
