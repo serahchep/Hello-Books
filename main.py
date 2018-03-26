@@ -21,7 +21,7 @@ books = [
     ]
 
 #This is the API for adding a book
-@app.route('/books', methods=['POST'])
+@app.route('/api/books', methods=['POST'])
 def add_book():
 	book = {
 	'id': request.json['id'],
@@ -33,13 +33,13 @@ def add_book():
 	books.append(book)
 	return jsonify({'book': book}), 201
 #viewing all books
-@app.route('/books', methods=['GET'])
+@app.route('/api/books', methods=['GET'])
 def get_books():
-    return jsonify({'books': books})
+    return jsonify({'/api/books': books})
 
     
 #This is API for updating a book information
-@app.route('/books/<int:id>', methods=['PUT'])
+@app.route('//api/books<int:id>', methods=['PUT'])
 def update_book(book_id):
     book = [book for book in books if book['id'] == book_id]
     book[0]['id'] = request.json.get('id', book[0]['id'])
