@@ -39,7 +39,7 @@ def get_books():
 
     
 #This is API for updating a book information
-@app.route('//api/books<int:id>', methods=['PUT'])
+@app.route('/api/books<int:id>', methods=['PUT'])
 def update_book(book_id):
     book = [book for book in books if book['id'] == book_id]
     book[0]['id'] = request.json.get('id', book[0]['id'])
