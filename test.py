@@ -1,7 +1,7 @@
 #test_main.py
 import unittest
 import json
-from main import app
+from API import app
 
 class TestApiEndpoints(unittest.TestCase):
     def setUp(self):
