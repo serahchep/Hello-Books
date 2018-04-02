@@ -1,2 +1,13 @@
 languange: Python
 Python 3.6.4
+install:
+
+  - pip install -r requirements.txt
+
+- pip install coveralls
+
+script: nosetests --with-coverage
+
+
+
+after_success: coveralls
