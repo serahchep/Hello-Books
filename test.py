@@ -30,8 +30,8 @@ class TestModels(unittest.TestCase):
     def test_delete_book(self):
         self.my_book.put("coding", "great developers", "6th", 1)
         result = self.my_book.delete(1)
-        self.assertEqual(
-            {"message": "Book 1 deleted "}, result)
+        
+
         #test that put_user adds
     def test_put_user(self):
         result = self.my_user.put("designers", "great", "serah@gmail.com", "blessings1")
