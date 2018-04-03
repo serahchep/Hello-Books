@@ -1,12 +1,12 @@
 language: python	
-python:	3.6.4
+python:	
+  - "3.6.4"
 cache: pip	
 install:	
-  pip install -r requirements.txt
-  pip install coveralls
-  pip install codeclimate-test-reporter
-script:	
-  nosetests --with-coverage
+  - pip install -r requirements.txt
+  - pip install coveralls
+  - pip install codeclimate-test-reporter
+script:	nosetests --with-coverage
 after_success:
-  coveralls
-codeclimate-test-reporter
+  - coveralls
+  - codeclimate-test-reporter
