@@ -27,7 +27,7 @@ def books():
 
         return response
 
-    #get a book method="GET"
+    #get all books method="GET"
     get_books = MY_BOOK.get_all()
     response = jsonify(get_books)
     response.status_code = 200
