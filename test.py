@@ -1,74 +1,45 @@
-#test_main.py
+#test for models.py
 import unittest
-import json
-from API import app
+import models
 
-class TestApiEndpoints(unittest.TestCase):
+#class to test models
+class TestModels(unittest.TestCase):
     def setUp(self):
-        with app.APP.app_context():
-            self.client = app.APP.test_client
-    #test that API can add a book 
-    def test_api_can_add_book(self):
-        
-        response = self.client().post('/api/v1/books', data=json.dumps(
-            {"book_id":20, "title": "coding",
-             "author":"serah"}),
-                                      content_type='application/json')
-        self.assertEqual(response.status_code, 201)
-#test that api can get all books (GET request)
-    def test_api_can_get_all_books(self):
-        response = self.client().get('/api/v1/books')
-        self.assertEqual(response.status_code, 200)
- #test that api can retrieve book by id (GET request)
-    def test_api_can_get_book_by_id(self):
-        response = self.client().get('/api/v1/books/2')
-        self.assertEqual(response.status_code, 200)
-        self.assertIn("queens are beatifull", str(response.data))
-    #test that api can modify book
-    def test_book_can_be_edited(self):
-        res = self.client().put('/api/v1/books/2',
-                                data=json.dumps({"title":"talents", 
-                                                 "author":"serah",
-                                                 "edition": "8th"}), 
-                                content_type='application/json')
-        self.assertEqual(res.status_code, 200)
-        results = self.client().get('/api/v1/books/2')
-        self.assertIn("John Greene", str(results.data))
-#test that api can delete book (POST request)
+        self.my_book = models.Books()
+        self.my_user = models.Users()
+#test that put_book adds book to all_books
+    def test_put_book(self):
+        result = self.my_book.put("serah chepkirui", "coding", "1st", 1139)
+        self.assertIn("serah chepkirui", result['title'])
+#tests get_all retrieves all books in the dictionary'''
+    def test_get_all_books(self):
+        result = self.my_book.get_all()
+        self.assertEqual(result, models.all_books)
+ #test that edit_book edits
+    def test_edit_book(self):
+        self.my_book.put("coding in Africa", "serah chepkirui", "13th", 2019)
+        result = self.my_book.edit_book("coding in Africa",
+                                        "serah chepkirui", "13th", 2019)
+        self.assertIn("coding in Africa", result["title"])
+#test that get_single_book returns all books
+    def test_get_single_book(self):
+        self.my_book.put("how to join Andela", "serah chepkirui", "18th", 2)
+        result = self.my_book.get_single_book(2)
+        self.assertEqual("serah chepkirui", result['author'])
+#test that get_single_book returns a book 
     def test_delete_book(self):
-        res = self.client().post('/api/v1/books', content_type='application/json',
-                                 data=json.dumps({"book_id":16,
-                                                  "title": "gifts",
-                                                  "author": "serah"}))
-        self.assertEqual(res.status_code, 200)
-        res = self.client().delete('/api/v1/books/16')
-        #test to check whether deleted item exists
-        self.assertEqual(res.status_code, 200)
-        result = self.client().get('/api/v1/books/16')
-        self.assertIn("Book not found", result.data)
- #method to test register 
-        result = self.client().post('/api/v1/auth/register', content_type='application/json',
-                                    data=json.dumps({"username":"serah", "name":"chepkiruiserah",
-                                                     "email":"serahkaku254@gmail.com", "password":"blessings1",
-                                                     "confirm_password":"blessings1"}))
-        self.assertEqual(result.status_code, 200)
-        #method to test register login
-        result2 = self.client().post('/api/v1/auth/login', content_type='application/json',
-                                     data=json.dumps({"username":"serah", "password":"blessings1"}))
-        a_token = result2.data
-        self.assertEqual(result2.status_code, 200)
-
-        result3 = self.client().post('/api/v1/users/books/2',
-                                     headers=dict(Authorization="Bearer "+ a_token))
-        self.assertEqual(result3.status_code, 200)
-
-        result4 = self.client().post('/api/v1/auth/logout',
-                                     headers=dict(Authorization="Bearer " + a_token))
-        self.assertIn('Successfully logged out', result4.data)
-
-        result5 = self.client().post('/api/v1/auth/reset-password', content_type='application/json',
-                                     data=json.dumps({"username":"hawa"}))
-        self.assertEqual(result5.status_code, 200)
+        self.my_book.put("coding", "great developers", "6th", 1)
+        result = self.my_book.delete(1)
+        self.assertEqual(
+            {"message": "Book 1 deleted "}, result)
+        #test that put_user adds
+    def test_put_user(self):
+        result = self.my_user.put("designers", "great", "serah@gmail.com", "blessings1")
+        self.assertIn("great", result)
+ #test verify password
+    def test_verify_password(self):
+        result = self.my_user.verify_password("great", "blessings1")
+        self.assertEqual(result, "True")
 
 if __name__ == "__main__":
  unittest.main()
