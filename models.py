@@ -1,3 +1,4 @@
+from flask import Flask
 import random
 import string
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -49,7 +50,6 @@ class Books():
         if book_id in all_books:
             del all_books[book_id]
             return {"message":"Book {} deleted successfully".format(book_id)}
-
         return {"message":"Book you are trying to delete doesn't exist"}
 
 

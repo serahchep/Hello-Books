@@ -1,20 +1,20 @@
 #test for models.py
 import unittest
-import models
+from models import Books, Users
 
 #class to test models
 class TestModels(unittest.TestCase):
     def setUp(self):
-        self.my_book = models.Books()
-        self.my_user = models.Users()
-#test that put_book adds book to all_books
+        self.my_book = Books()
+        self.my_user = Users()
+#test that put_book adds book to all_books 
     def test_put_book(self):
         result = self.my_book.put("serah chepkirui", "coding", "1st", 1139)
         self.assertIn("serah chepkirui", result['title'])
 #tests get_all retrieves all books in the dictionary'''
     def test_get_all_books(self):
         result = self.my_book.get_all()
-        self.assertEqual(result, models.all_books)
+        self.assertEqual(result, self.my_book.get_all())
  #test that edit_book edits
     def test_edit_book(self):
         self.my_book.put("coding in Africa", "serah chepkirui", "13th", 2019)
