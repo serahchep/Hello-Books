@@ -1,6 +1,9 @@
-#test for models.py
+import sys
 import unittest
-from models import Books, Users
+
+sys.path.append("..")
+from app.books.models import Books
+from app.users.models import Users
 
 #class to test models
 class TestModels(unittest.TestCase):
@@ -34,11 +37,11 @@ class TestModels(unittest.TestCase):
 
         #test that put_user adds
     def test_put_user(self):
-        result = self.my_user.put("designers", "great", "serah@gmail.com", "blessings1")
+        result = self.my_user.put("great", "serah@gmail.com", "blessings1")
         self.assertIn("great", result)
  #test verify password
     def test_verify_password(self):
-        result = self.my_user.verify_password("great", "blessings1")
+        result =self. my_user.verify_password("great", "blessings1")
         self.assertEqual(result, "True")
 
 if __name__ == "__main__":
