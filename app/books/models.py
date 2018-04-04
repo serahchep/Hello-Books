@@ -1,7 +1,7 @@
 from flask import Flask
 from werkzeug.security import generate_password_hash, check_password_hash
 
-all_books = []
+all_books = {}
 
 class Books():
    

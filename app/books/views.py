@@ -2,7 +2,7 @@ from flask import Flask
 from flask import Flask, request, jsonify
 from flask import Blueprint
 from models import Books
-from books import book
+
 
 book = Blueprint('book', __name__)
 APP = Flask(__name__)
