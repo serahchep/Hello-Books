@@ -2,6 +2,7 @@ from flask import Flask
 from flask import Flask, request, jsonify
 from flask import Blueprint
 from models import Books
+from books import book
 
 book = Blueprint('book', __name__)
 APP = Flask(__name__)
@@ -32,7 +33,7 @@ def books():
 
     return response
 # endpoint to edit, modify and delete a book by id
-methods=['PUT', 'GET', 'DELETE']
+@APP.route('/api/v1/books/<int:book_id>', methods=['PUT', 'GET', 'DELETE'])
 #get a book by its id
 def book_book_id(book_id):
     if request.method == 'GET':

@@ -1,5 +1,9 @@
 #test for models.py
+# from flask import Flask
+import sys
 import unittest
+
+sys.path.append("..")
 from app.books.models import Books
 from app.users.models import Users
 

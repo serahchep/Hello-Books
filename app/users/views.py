@@ -1,4 +1,3 @@
-from flask import Flask
 from flask import Flask, request, jsonify
 from flask import Blueprint
 from flask_jwt_extended import (
@@ -7,6 +6,7 @@ from flask_jwt_extended import (
  )
 
 from models import Users
+from users import user
 
 #user = Blueprint('user', __name__)
 APP = Flask(__name__)

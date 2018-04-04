@@ -27,7 +27,7 @@ class Books():
         self.book["title"] = title
         self.book["author"] = author
         self.book["edition"] = edition
-
+        self.book["book_id"]= book_id
         all_books[book_id] = self.book
         return all_books[book_id]
 
@@ -37,6 +37,7 @@ class Books():
             self.book["title"] = title
             self.book["author"] = author
             self.book["edition"] = edition
+            self.book["book_id"]= book_id
 
             all_books[book_id] = self.book
             return all_books[book_id]
