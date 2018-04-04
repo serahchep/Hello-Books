@@ -1,0 +1,54 @@
+[report]
+
+omit=
+
+    */python?.?/*
+
+    *site-packages/*
+
+    *site-packages/nose/*
+    
+    *werkzeug
+
+    *tests/*
+
+    *asyncio/*
+
+    *concurrent/*
+
+    *ctypes/*
+
+    *multiprocessing/*
+
+    *mimetypes.py
+
+    *html/*
+
+    *decimal.py
+
+    *http/*
+
+    *numbers.py
+
+    *stringprep.py
+
+    *uuid.py
+
+    *encodings/*
+
+    *hmac.py
+
+
+
+
+
+
+
+[html]
+
+directory = coverage_html
+
+Add Comment
+Collapse 
+
+
