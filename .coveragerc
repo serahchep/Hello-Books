@@ -38,17 +38,8 @@ omit=
 
     *hmac.py
 
-
-
-
-
-
-
 [html]
 
 directory = coverage_html
-
-Add Comment
-Collapse 
 
 
