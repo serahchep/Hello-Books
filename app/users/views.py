@@ -5,7 +5,7 @@ from flask_jwt_extended import (
      jwt_refresh_token_required, get_jwt_identity, jwt_required, get_raw_jwt
  )
 from models import Users
-from users import user
+
 
 #user = Blueprint('user', __name__)
 APP = Flask(__name__)
