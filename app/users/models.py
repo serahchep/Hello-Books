@@ -22,7 +22,7 @@ class Users():
         return {username: USERS[username]}
 
  #verify password
-    
+
     def verify_password(self, username, password):
         if username in USERS:
             result = check_password_hash(USERS[username]["password"], password)
